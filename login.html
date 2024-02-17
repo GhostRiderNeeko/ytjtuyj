@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('images/Silvia.gif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            padding-top: 0;
+            color: #fff; /* White text color */
+        }
+
+        .topbar {
+            overflow: hidden;
+            background-color: #333;
+            width: 100%; /* Full width */
+        }
+
+        .topbar-brand {
+            float: right; /* Align the logo to the right */
+        }
+
+        .topbar-brand img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        .topbar a {
+            float: left;
+            font-size: 20px;
+            color: #fff; /* White text */
+            text-align: center;
+            padding: 30px 15px;
+            text-decoration: none;
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .topbar a:hover {
+            background-color: #E3B448; /* Red on hover */
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 20px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 30px 15px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #bdbbbb;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            text-align: center; /* Center the text */
+            padding: 20px; /* Add padding for spacing */
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: #fff; /* White text */
+            padding: 15px 15px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            font-size: 24px; /* Larger font size */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #E3B448; /* Light gray on hover */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block; /* Show dropdown on hover */
+        }
+
+        .content {
+            font-size: 40px;
+            line-height: 1.5;
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            text-align: center;
+            margin-top: 250px; /* Adjust the margin to center vertically */
+        }
+
+        /* Form styling */
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #E3B448;
+        }
+
+        .create-account-button {
+            color: #fff;
+            font-size: 18px;
+            text-decoration: none;
+            background-color: #333;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .create-account-button:hover {
+            background-color: #E3B448;
+        }
+    </style>
+    <!-- Font Awesome for the caret-down icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Top navigation bar -->
+    <div class="topbar">
+        <div class="topbar-brand">
+            <img src="images/PISTONS.jpg" alt="Auto Point Logo">
+        </div>
+        <!-- Navigation links -->
+
+        <!-- Dropdown menu - About -->
+        <div class="dropdown">
+            <button class="dropbtn">About
+                <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="about.html">About Us</a>
+                <a href="Our team.html">Our Team</a>
+            </div>
+        </div>
+
+        <!-- Other navigation links -->
+        <a href="service.html">Service</a>
+        <a href="store.html">Store</a>
+        <a href="booking.html">Booking</a>
+        <a href="cart.html">Cart</a>
+        <a href="home.html">Home</a>
+    </div>
+
+    <!-- Main content area -->
+    <div class="content">
+        <h1>Login</h1>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <input type="submit" value="Login">
+        </form>
+
+        <a href="create-account.html" class="create-account-button">Create Account</a>
+    </div>
+</body>
+
+</html>

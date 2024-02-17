@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('images/Lancer Evo.gif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            padding-top: 0;
+            color: #fff; /* White text color */
+        }
+
+        .topbar {
+            overflow: hidden;
+            background-color: #333;
+            width: 100%; /* Full width */
+        }
+
+        .topbar-brand {
+            float: right; /* Align the logo to the right */
+        }
+
+        .topbar-brand img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        .topbar a {
+            float: left;
+            font-size: 20px;
+            color: #fff; /* White text */
+            text-align: center;
+            padding: 30px 15px;
+            text-decoration: none;
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .topbar a:hover {
+            background-color: #E3B448; /* Red on hover */
+        }
+
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 20px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 30px 15px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #bdbbbb;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            text-align: center; /* Center the text */
+            padding: 20px; /* Add padding for spacing */
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: #fff; /* White text */
+            padding: 15px 15px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            font-size: 24px; /* Larger font size */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #E3B448; /* Light gray on hover */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block; /* Show dropdown on hover */
+        }
+
+        .content {
+            font-size: 40px;
+            line-height: 1.5;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            text-align: center;
+            margin-top: 50px; /* Adjust the margin to center vertically */
+        }
+
+        /* Team members styling */
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .team-member {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .member-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .member-name {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .member-role {
+            font-size: 18px;
+            color: #E3B448;
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .team-member {
+                padding: 15px; /* Adjust padding for smaller screens */
+            }
+
+            .member-image {
+                margin-bottom: 8px; /* Adjust margin for smaller screens */
+            }
+
+            .member-name {
+                font-size: 18px; /* Adjust font size for smaller screens */
+            }
+
+            .member-role {
+                font-size: 16px; /* Adjust font size for smaller screens */
+            }
+        }
+    </style>
+    <!-- Font Awesome for the caret-down icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Top navigation bar -->
+    <div class="topbar">
+        <div class="topbar-brand">
+            <img src="images/PISTONS.jpg" alt="Auto Point Logo">
+        </div>
+        <!-- Navigation links -->
+
+        <!-- Dropdown menu - About -->
+        <div class="dropdown">
+            <button class="dropbtn">About
+                <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="about.html">About Us</a>
+                <a href="team.html">Our Team</a>
+            </div>
+        </div>
+
+        <!-- Other navigation links -->
+        <a href="service.html">Service</a>
+        <a href="store.html">Store</a>
+        <a href="booking.html">Booking</a>
+        <a href="login.html">Login</a>
+        <a href="cart.html">Cart</a>
+        <a href="home.html">Home</a>
+
+    </div>
+
+    <!-- Main content area -->
+    <div class="content">
+        <h1>Our Team</h1>
+
+        <!-- Team members -->
+        <div class="team-members">
+            <!-- Team Member 1 -->
+            <div class="team-member">
+                <img class="member-image" src="images/LeadMechanic.jpg" alt="Team Member 1">
+                <div class="member-name">Kristoffer Castillo</div>
+                <div class="member-role">Lead Mechanic</div>
+            </div>
+
+            <!-- Team Member 2 -->
+            <div class="team-member">
+                <img class="member-image" src="images/Aeron.jpg" alt="Team Member 2">
+                <div class="member-name">Aeron Dumalag</div>
+                <div class="member-role">Shop Secretary</div>
+            </div>
+
+            <!-- Team Member 3 -->
+            <div class="team-member">
+                <img class="member-image" src="images/Necerio.jpg" alt="Team Member 3">
+                <div class="member-name">Louie Necerio</div>
+                <div class="member-role">Electrician</div>
+            </div>
+
+            <div class="team-member">
+                <img class="member-image" src="images/Tandog.jpg" alt="Team Member 4">
+                <div class="member-name">Cristan Tandog</div>
+                <div class="member-role">Floor Mechanic</div>
+            </div>
+
+            <div class="team-member">
+                <img class="member-image" src="images/MAWAC.png" alt="Team Member 5">
+                <div class="member-name">Andrei Mawac</div>
+                <div class="member-role">Mechanic</div>
+            </div>
+
+            <!-- Add more team members as needed -->
+
+        </div>
+    </div>
+
+</body>
+
+</html>

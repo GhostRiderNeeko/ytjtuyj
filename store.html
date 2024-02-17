@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Add Font Awesome for the caret-down icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<style>
+  body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url(images/AE86.gif);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin: 0;
+  padding-top: 0;
+  color: #fff; /* White text color */
+  background-color: #6e6e6e;
+}
+
+.topbar {
+  overflow: hidden;
+  background-color: #333;
+  width: 100%; /* Full width */
+}
+
+.topbar-brand {
+  float: right; /* Align the logo to the right */
+}
+
+.topbar-brand img {
+  max-width: 80px;
+  height: auto;
+}
+
+.topbar a {
+  float: left;
+  font-size: 18px; /* Adjusted font size for smaller screens */
+  color: #fff; /* White text */
+  text-align: center;
+  padding: 20px 10px; /* Adjusted padding for smaller screens */
+  text-decoration: none;
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.topbar a:hover {
+  background-color: #E3B448; /* Red on hover */
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 18px; /* Adjusted font size for smaller screens */
+  border: none;
+  outline: none;
+  color: white;
+  padding: 20px 10px; /* Adjusted padding for smaller screens */
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #bdbbbb;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  text-align: center; /* Center the text */
+ /* Add padding for spacing */
+}
+
+.dropdown-content a {
+  float: none;
+  color: #fff; /* White text */
+  padding: 15px 15px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 18px; /* Adjusted font size for smaller screens */
+}
+
+.dropdown-content a:hover {
+  background-color: #E3B448; /* Light gray on hover */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* Show dropdown on hover */
+}
+
+.content {
+  font-size: 24px; /* Adjusted font size for smaller screens */
+  line-height: 1.5;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  backdrop-filter: blur(5px);
+  padding: 10px;
+  text-align: center;
+  margin-top: 30px; /* Adjust the margin to center vertically */
+}
+
+/* Store items styling */
+.store-items {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.store-item {
+  display: none;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  position: absolute;
+}
+
+.item-checkbox {
+  margin-bottom: 10px;
+}
+
+.item-image {
+  width: 300px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.item-name {
+  font-size: 18px; /* Adjusted font size for smaller screens */
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.item-description {
+  font-size: 6px;
+  margin-left: 5px;
+  color: #333;
+}
+
+.item-price {
+  font-size: 16px; /* Adjusted font size for smaller screens */
+  color: #E3B448;
+}
+
+
+/* Styling for slideshow navigation buttons */
+.nav-buttons button {
+
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px; /* Adjusted font size for smaller screens */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nav-buttons button:hover {
+  background-color: #555;
+}
+
+.nav-buttons button i {
+  margin-right: 5px;
+}
+
+/* Styling for Add to Cart button */
+#addToCartBtn {
+  background-color: #E3B448;
+  color: #fff;
+  cursor: pointer;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  transition: background-color 0.3s;
+}
+
+#addToCartBtn:hover {
+  background-color: #FFC300;
+}
+
+/* Form styling */
+form {
+  max-width: 90%; /* Adjusted maximum width for smaller screens */
+  margin: 0 auto;
+  padding-top: 20px; /* Added padding for spacing */
+}
+
+/* Additional styles for responsiveness */
+@media only screen and (min-width: 600px) {
+  .store-items {
+      flex-direction: row;
+      justify-content: center;
+      gap: 5rem;
+  }
+
+  .store-item {
+      position: relative;
+  }
+}
+</style>
+
+<body>
+    <!-- Top navigation bar -->
+    <div class="topbar">
+        <div class="topbar-brand">
+            <img src="images/PISTONS.jpg" alt="Auto Point Logo">
+        </div>
+        <!-- Navigation links -->
+
+        <!-- Dropdown menu - About -->
+        <div class="dropdown">
+            <button class="dropbtn">About
+                <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="about.html">About Us</a>
+                <a href="Our team.html">Our Team</a>
+            </div>
+        </div>
+
+        <!-- Other navigation links -->
+        <a href="service.html">Service</a>
+        <a href="booking.html">Booking</a>
+        <a href="login.html">Login</a>
+        <a href="cart.html">Cart</a>
+        <a href="home.html">Home</a>
+    </div>
+
+    <!-- Main content area -->
+    <div class="content">
+        <h1>Explore Our Store</h1>
+
+        <!-- Store items slideshow -->
+        <div class="store-items" id="storeItems">
+
+          <!--previous-->
+          <div class="nav-buttons">
+            <button onclick="prevSlide()"><i class="fas fa-chevron-left"></i> Previous</button>
+          </div>
+          
+            <!-- Item 1 -->
+            <div class="store-item">
+                <img class="item-image" src="images/rear_bumper-removebg-preview.png" alt="Item 1">
+                <div class="item-name">Rear Bumper</div>
+                <div class="item-description"><p style="font-size: small;"> Featured with durable construction, enhanced protection, sleek customized design, easy installation, and versatile compatibility for a seamless upgrade. </p></div>
+                <div class="item-price">$19.99</div>
+                <input class="item-checkbox" type="checkbox" name="item" value="Item 1">
+            </div>
+
+            <!-- Item 2 -->
+            <div class="store-item">
+                <img class="item-image" src="images/front_bumper-removebg-preview.png" alt="Item 2">
+                <div class="item-name">Front Bumper</div>
+                <div class="item-description"><p style="font-size: small;"> Designed to handle more complex tasks, the front bumper often integrates fog lights, grilles, and air intake. </p></div>
+                <div class="item-price">$24.99</div>
+                <input class="item-checkbox" type="checkbox" name="item" value="Item 2">
+            </div>
+
+            <!-- Item 3 -->
+            <div class="store-item">
+                <img class="item-image" src="images/headlight-removebg-preview.png" alt="Item 3">
+                <div class="item-name">Head Light</div>
+                <div class="item-description"><p style="font-size: small;"> High-performance headlights that seamlessly blend
+                   cutting-edge technology with sleek aesthetics. </p></div>
+                <div class="item-price">$14.99</div>
+                <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+            </div>
+
+              <!-- Item 4 -->
+            <div class="store-item">
+              <img class="item-image" src="images/WheelCar.png" alt="Item 3">
+              <div class="item-name">Car Tire</div>
+              <div class="item-description"><p style="font-size: small;"> Upgrade your driving experience with the Peak Performance Tire – where innovation meets reliability. </p></div>
+              <div class="item-price">$14.99</div>
+              <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+          </div>
+
+           <!-- Item 5 -->
+           <div class="store-item">
+            <img class="item-image" src="images/tail_light-removebg-preview.png" alt="Item 3">
+            <div class="item-name">Tail Light</div>
+            <div class="item-description"><p style="font-size: small;"> This tail lights not only add a touch of sophistication to your ride but also significantly improve visibility on the road. </p></div>
+            <div class="item-price">$14.99</div>
+            <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+        </div>
+
+          <!-- Item 6 -->
+          <div class="store-item">
+            <img class="item-image" src="images/Grille-removebg-preview.png" alt="Item 3">
+            <div class="item-name">Grille</div>
+            <div class="item-description"><p style="font-size: small;"> Premium car grille where style meets functionality, and innovation meets elegance. </p></div>
+            <div class="item-price">$14.99</div>
+            <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+        </div>
+
+        <!-- Item 7 -->
+        <div class="store-item">
+          <img class="item-image" src="images/side_pocket-removebg-preview.png" alt="Item 3">
+          <div class="item-name">Console Side Pocket</div>
+          <div class="item-description"><p style="font-size: small;"> Crafted with precision and innovation, this sleek accessory seamlessly combines functionality with style, offering you the ultimate convenience on the road. </p></div>
+          <div class="item-price">$14.99</div>
+          <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+      </div>
+
+      <!-- Item 8 -->
+      <div class="store-item">
+        <img class="item-image" src="images/cowl-panels-3-removebg-preview.png" alt="Item 3">
+        <div class="item-name">Cowl Panel</div>
+        <div class="item-description"><p style="font-size: small;"> Manufactured from high-quality materials, these panels are built to withstand the elements, ensuring long-lasting performance and protection for your vehicle's crucial components. </p></div>
+        <div class="item-price">$14.99</div>
+        <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+    </div>
+
+    <!-- Item 9 -->
+    <div class="store-item">
+      <img class="item-image" src="images/toolbox-removebg-preview.png" alt="Item 3">
+      <div class="item-name">Tool Box</div>
+      <div class="item-description"><p style="font-size: small;"> Our toolbox is meticulously crafted to meet the diverse needs of both beginners and seasoned craftsmen. </p></div>
+      <div class="item-price">$14.99</div>
+      <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+  </div>
+
+  <!-- Item 10 -->
+  <div class="store-item">
+    <img class="item-image" src="images/Cushion-removebg-preview.png" alt="Item 3">
+    <div class="item-name">Car Cushion</div>
+    <div class="item-description"><p style="font-size: small;"> rafted with meticulous attention to detail, this cushion is designed to elevate your driving or passenger seat to new heights of luxury. </p></div>
+    <div class="item-price">$14.99</div>
+    <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+</div>
+
+ <!-- Item 11 -->
+ <div class="store-item">
+  <img class="item-image" src="images/brakefluid-removebg-preview.png" alt="Item 3">
+  <div class="item-name">Brake Fluid</div>
+  <div class="item-description"><p style="font-size: small;"> Crafted with precision and engineered for excellence, our brake fluid is the ideal choice for drivers who demand uncompromised quality. </p></div>
+  <div class="item-price">$14.99</div>
+  <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+</div>
+
+ <!-- Item 12 -->
+ <div class="store-item">
+  <img class="item-image" src="images/CarBatt-removebg-preview.png" alt="Item 3">
+  <div class="item-name">Car Battery</div>
+  <div class="item-description"><p style="font-size: small;"> a powerhouse of reliable energy designed to keep your vehicle running smoothly and efficiently. </p></div>
+  <div class="item-price">$14.99</div>
+  <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+</div>
+
+ <!-- Item 13 -->
+ <div class="store-item">
+  <img class="item-image" src="images/carcover-removebg-preview.png" alt="Item 3">
+  <div class="item-name">Car Cover</div>
+  <div class="item-description"><p style="font-size: small;"> Crafted with precision and designed for durability, our car cover is a shield against the elements, ensuring your car stays in pristine condition year-round. </p></div>
+  <div class="item-price">$14.99</div>
+  <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+</div>
+
+ <!-- Item 14 -->
+ <div class="store-item">
+  <img class="item-image" src="images/carsticker-removebg-preview.png" alt="Item 3">
+  <div class="item-name">Car Sticker</div>
+  <div class="item-description"><p style="font-size: small;"> An eye-catching and customizable car stickers the perfect way to express your personality and make a bold statement on the road. </p></div>
+  <div class="item-price">$14.99</div>
+  <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+</div>
+
+ <!-- Item 15 -->
+ <div class="store-item">
+  <img class="item-image" src="images/carwax-removebg-preview.png" alt="Item 3">
+  <div class="item-name">Car Wax</div>
+  <div class="item-description"><p style="font-size: small;">  Crafted with precision and innovation, our car wax is meticulously formulated to deliver a showroom-quality finish, ensuring your vehicle stands out with a brilliant and lasting luster. </p></div>
+  <div class="item-price">$14.99</div>
+  <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+</div>
+
+ <!-- Item 16 -->
+ <div class="store-item">
+  <img class="item-image" src="images/enginecoolant-removebg-preview.png" alt="Item 3">
+  <div class="item-name">Engine Coolant</div>
+  <div class="item-description"><p style="font-size: small;"> Engine Coolant for a reliable and high-performance solution that goes beyond mere temperature regulation. </p></div>
+  <div class="item-price">$14.99</div>
+  <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+</div>
+
+ <!-- Item 17 -->
+ <div class="store-item">
+  <img class="item-image" src="images/muffler-removebg-preview.png" alt="Item 3">
+  <div class="item-name">Muffler</div>
+  <div class="item-description"><p style="font-size: small;"> Designed with precision engineering, our muffler is constructed from high-quality materials that ensure durability and longevity. </p></div>
+  <div class="item-price">$14.99</div>
+  <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+</div>
+
+ <!-- Item 18 -->
+ <div class="store-item">
+  <img class="item-image" src="images/Exhaustpipes-removebg-preview.png" alt="Item 3">
+  <div class="item-name">Exhaust Pipe</div>
+  <div class="item-description"><p style="font-size: small;"> An exhaust pipes – where performance, style, and quality converge to redefine your driving experience. </p></div>
+  <div class="item-price">$14.99</div>
+  <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+</div>
+
+ <!-- Item 19 -->
+ <div class="store-item">
+  <img class="item-image" src="images/floor_mats-removebg-preview.png" alt="Item 3">
+  <div class="item-name">Floor Mats</div>
+  <div class="item-description"><p style="font-size: small;"> Crafted from high-quality materials, our floor mats are not just practical, but they also make a statement. </p></div>
+  <div class="item-price">$14.99</div>
+  <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+</div>
+
+ <!-- Item 20 -->
+ <div class="store-item">
+  <img class="item-image" src="images/frontstrutshock-removebg-preview.png" alt="Item 3">
+  <div class="item-name">Front and Rear Strut Shock</div>
+  <div class="item-description"><p style="font-size: small;">  Engineered for performance and durability, these high-quality shock absorbers are designed to tackle the toughest terrains, ensuring you conquer every road with confidence. </p></div>
+  <div class="item-price">$14.99</div>
+  <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+</div>
+
+ <!-- Item 21 -->
+ <div class="store-item">
+  <img class="item-image" src="images/sparkplug-removebg-preview.png" alt="Item 3">
+  <div class="item-name">Spark Plug</div>
+  <div class="item-description"><p style="font-size: small;"> Crafted with precision and attention to detail, our spark plugs feature a state-of-the-art design that ensures a consistent and powerful spark. </p></div>
+  <div class="item-price">$14.99</div>
+  <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+</div>
+
+ <!-- Item 22 -->
+ <div class="store-item">
+  <img class="item-image" src="images/wheelrim-removebg-preview.png" alt="Item 3">
+  <div class="item-name">Wheel Rim</div>
+  <div class="item-description"><p style="font-size: small;"> Constructed from high-quality materials, these rims are built to withstand the rigors of the road while maintaining their stunning appearance. </p></div>
+  <div class="item-price">$14.99</div>
+  <input class="item-checkbox" type="checkbox" name="item" value="Item 3">
+</div>
+
+            <!-- Add more items as needed -->
+
+            <!-- Navigation buttons for slideshow -->
+            <div class="nav-buttons">
+                <button onclick="nextSlide()">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+
+        <!-- Form for submitting selected items -->
+        <form id="cartForm">
+            <button id="addToCartBtn" onclick="addToCart()">Add to Cart</button>
+        </form>
+
+        <!-- JavaScript for slideshow, form submission, and product addition -->
+        <script>
+            var currentSlide = 0;
+            var storeItems = document.querySelectorAll('.store-item');
+            showSlide(currentSlide);
+
+            function showSlide(n) {
+                storeItems.forEach(function (item) {
+                    item.style.display = 'none';
+                });
+
+                storeItems[n].style.display = 'block';
+            }
+
+            function addToCart() {
+                var selectedItems = document.querySelectorAll('.item-checkbox:checked');
+                var cartForm = document.getElementById('cartForm');
+
+                selectedItems.forEach(function (item) {
+                    var input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'cartItem[]';
+                    input.value = item.value;
+                    cartForm.appendChild(input);
+                });
+
+                // You can submit the form here if needed
+                // cartForm.submit();
+            }
+
+            // Next and previous slide functions
+            function nextSlide() {
+                if (currentSlide < storeItems.length - 1) {
+                    currentSlide++;
+                } else {
+                    currentSlide = 0;
+                }
+                showSlide(currentSlide);
+            }
+
+            function prevSlide() {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                } else {
+                    currentSlide = storeItems.length - 1;
+                }
+                showSlide(currentSlide);
+            }
+
+            // Function to add a product dynamically
+            function addProduct(name, price, imageSrc, description) {
+                var storeItemsContainer = document.getElementById('storeItems');
+
+                // Create a new store item element
+                var storeItem = document.createElement('div');
+                storeItem.className = 'store-item';
+
+                // Add product details to the store item
+                storeItem.innerHTML = `
+                    <img class="item-image" src="${imageSrc}" alt="${name}">
+                    <div class="item-name">${name}</div>
+                    <div class="item-price">$${price}</div>
+                    <input class="item-checkbox" type="checkbox" name="item" value="${name}">
+
+                    <!-- Product details section -->
+                    <div class="product-details">
+                        <p>${description}</p>
+                    </div>
+                `;
+
+                // Append the store item to the store items container
+                storeItemsContainer.appendChild(storeItem);
+
+                // Update the slideshow
+                storeItems = document.querySelectorAll('.store-item');
+                showSlide(currentSlide);
+            }
+
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <style>
+        /* Resetting default styles and setting background image */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('images/RocketBunny.gif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            padding-top: 0px;
+        }
+
+        /* Styling for the top navigation bar */
+        .topbar {
+            overflow: hidden;
+            background-color: #333;
+            width: 100%; /* Full width */
+        }
+
+        /* Styling for the logo in the top navigation bar */
+        .topbar-brand {
+            float: right; /* Align the logo to the right */
+        }
+
+        .topbar-brand img {
+            max-width: 80px;
+            height: auto;
+        }
+
+        /* Styling for links in the top navigation bar */
+        .topbar a {
+            float: left;
+            font-size: 20px;
+            color: #fff; /* White text */
+            text-align: center;
+            padding: 30px 15px;
+            text-decoration: none;
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .topbar a:hover {
+            background-color: #E3B448; /* Red on hover */
+        }
+
+        /* Styling for dropdown menu */
+        .dropdown {
+            float: left;
+            overflow: hidden;
+        }
+
+        .dropdown .dropbtn {
+            font-size: 20px;
+            border: none;
+            outline: none;
+            color: white;
+            padding: 30px 15px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #bdbbbb;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            text-align: center; /* Center the text */
+            padding: 20px; /* Add padding for spacing */
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: #fff; /* White text */
+            padding: 15px 15px;
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            font-size: 24px; /* Larger font size */
+        }
+
+        .dropdown-content a:hover {
+            background-color: #E3B448; /* Light gray on hover */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block; /* Show dropdown on hover */
+        }
+
+        /* Arrow icon style */
+        .dropdown .fa-caret-down {
+            margin-left: 5px;
+        }
+
+        /* Styling for the main content area */
+        .content {
+            font-size: 25px;
+            line-height: 1.5;
+            box-shadow: 0 0 10px rgb(0, 0, 0);
+            backdrop-filter: blur(5px);
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px; /* Adjust the margin to center vertically */
+            color: #fff; /* White text color */
+        }
+
+        /* Responsive styles */
+        @media screen and (max-width: 600px) {
+            .topbar a {
+                padding: 15px 8px; /* Adjust padding for smaller screens */
+            }
+
+            .topbar-brand img {
+                max-width: 60px; /* Adjust logo size for smaller screens */
+            }
+
+            .dropdown .dropbtn {
+                padding: 15px 8px; /* Adjust padding for smaller screens */
+            }
+
+            .dropdown-content a {
+                padding: 10px 8px; /* Adjust padding for smaller screens */
+            }
+
+            .content {
+                font-size: 20px; /* Adjust font size for smaller screens */
+            }
+        }
+    </style>
+
+    <!-- Font Awesome for the caret-down icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+
+<body>
+    <!-- Top navigation bar -->
+    <div class="topbar">
+        <div class="topbar-brand">
+            <img src="images/PISTONS.jpg" alt="Auto Point Logo">
+        </div>
+        <!-- Navigation links -->
+        <div class="dropdown">
+            <button class="dropbtn">About
+                <i class="fas fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="Our team.html">Our Team</a>
+            </div>
+        </div> <!-- Close the div for the "About" dropdown here -->
+
+        <!-- Other navigation links -->
+        <a href="service.html">Service</a>
+        <a href="store.html">Store</a>
+        <a href="booking.html">Booking</a>
+        <a href="login.html">Login</a>
+        <a href="cart.html">Cart</a>
+        <a href="home.html">Home</a>
+    </div>
+
+    <!-- Main content area -->
+    <div class="content">
+        <h1>About</h1>
+        <!-- Content explaining the purpose of "Auto Point" -->
+        <p>The "Auto Point" project is a website feature created to improve auto mechanics' online visibility and expedite
+            communication with customers. This functionality will be incorporated into a new website that will act as a central
+            digital location for all things auto maintenance and repair-related. With the help of Auto Point, auto technicians
+            will be able to give their customers a more effective and easy experience, and customers will find it simple to
+            access important services and information.
+
+            Our website is the ideal resource for car owners because it provides a huge selection of services, original auto
+            parts, and the ease of scheduling appointments with the top mechanics. We're here to simplify your automotive
+            needs and provide top-quality care, all in one accessible platform.
+
+            Since the majority of drivers spend time looking for a mechanic shop that offers high-quality auto maintenance
+            and repair services, "Auto Point" is here to offer a practical website that can offer services and car parts that
+            can be acquired on the website, making the customers feel at ease just by scrolling. The website has its different
+            pages in which the customer will find almost all of the services that they are seeking, like booking an appointment,
+            services, and car parts. It has a feature where the customers can choose who they want to be a repairman of their car.
+
+            This initiative intends to satisfy the increasing requirement for dependable, high-quality auto maintenance and
+            repair services in our city. Auto Point is positioned to become the go-to place for vehicle owners looking for expert,
+            effective, and reliable services thanks to its strong commitment to providing outstanding client experiences and
+            automotive care.
+        </p>
+    </div>
+</body>
+
+</html>
